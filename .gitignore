@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+api_debug.log
+api_server.log
+login_debug.log
+web_server.log
+website_server.log
+
+# Database files
+*.db
+shotlist_analytics.db
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
+
+# Figma sync data (optional - uncomment if you don't want to track)
+# figma-sync-data/
+
+# Public plugins (very large - exclude to reduce repo size)
+public/plugins/
+

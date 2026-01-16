@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVB Estudio Creativo - Excelencia Visual Sin Perder el Alma</title>
+    <meta name="description" content="Estudio boutique de fotografía fine art, producción audiovisual y marketing digital en Chile. Especialistas en fotografía ecuestre, automotriz y campañas que funcionan.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">PVB</span>
+                <span class="logo-dot">●</span>
+                <span class="logo-name">ESTUDIO CREATIVO</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#work" class="nav-link">TRABAJO</a>
+                <a href="#about" class="nav-link">NOSOTROS</a>
+                <a href="#agenda" class="nav-link">AGENDA</a>
+                <a href="login.html" class="nav-link">CLIENT LOGIN</a>
+                <a href="#contact" class="nav-link">CONTACTO</a>
+                <button class="btn btn-primary">INICIAR PROYECTO</button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Background Video or Fallback -->
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline onerror="this.style.display='none'">
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <h1 class="hero-title fade-in">
+                <span class="hero-line">PVB ESTUDIO</span>
+                <span class="hero-line">CREA</span>
+                <span class="hero-line">CAMPAÑAS</span>
+                <span class="hero-line">QUE FUNCIONAN</span>
+            </h1>
+            <button class="btn btn-primary btn-hero pulse">INICIAR PROYECTO</button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">QUÉ HACEMOS</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 30L27 37L40 23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">STRATEGY</h3>
+                    <p class="service-description">Somos un estudio creativo boutique especializado en potenciar negocios a través de estrategias de marketing, diseño web, videos, fotografía y gráfica. Creamos soluciones integrales con un enfoque cercano y personalizado.</p>
+                    <button class="btn btn-secondary">Más Info</button>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="15" y="15" width="30" height="30" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="30" cy="30" r="8" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">CREATIVE</h3>
+                    <p class="service-description">Diseñamos identidades visuales que conectan con tu audiencia. Desde branding y gráfica hasta contenido audiovisual, cada proyecto refleja la esencia de tu marca con creatividad y propósito.</p>
+                    <button class="btn btn-secondary">Más Info</button>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M15 45L30 15L45 45H15Z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="30" cy="35" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">EXECUTION</h3>
+                    <p class="service-description">Transformamos ideas en resultados concretos. Gestionamos cada detalle de tu proyecto con dedicación y eficiencia, desde la producción fotográfica y audiovisual hasta la implementación digital completa.</p>
+                    <button class="btn btn-secondary">Más Info</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="work">
+        <div class="container">
+            <h2 class="section-title">NUESTRO TRABAJO</h2>
+            
+            <!-- Featured Project -->
+            <div class="featured-project" data-aos="fade-up">
+                <div class="project-image-placeholder">
+                    <div class="project-overlay">
+                        <h3 class="project-title">CAMPAÑA DE LANZAMIENTO</h3>
+                        <p class="project-subtitle">Estrategia de Marketing Completa</p>
+                        <button class="btn btn-primary">VER PROYECTO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-delay="0">
+                    <div class="project-image-placeholder small">
+                        <div class="project-overlay">
+                            <h4>CAMPAÑA DIGITAL</h4>
+                            <button class="btn btn-primary btn-small">VER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-delay="100">
+                    <div class="project-image-placeholder small">
+                        <div class="project-overlay">
+                            <h4>IDENTIDAD DE MARCA</h4>
+                            <button class="btn btn-primary btn-small">VER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-delay="200">
+                    <div class="project-image-placeholder small">
+                        <div class="project-overlay">
+                            <h4>ESTRATEGIA SOCIAL</h4>
+                            <button class="btn btn-primary btn-small">VER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-delay="0">
+                    <span class="stat-number" data-target="47">0</span>
+                    <span class="stat-label">CAMPAÑAS</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-delay="100">
+                    <span class="stat-number" data-target="98">0</span><span class="stat-percent">%</span>
+                    <span class="stat-label">TASA DE ÉXITO</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-delay="200">
+                    <span class="stat-number" data-target="0.8">0</span><span class="stat-unit">s</span>
+                    <span class="stat-label">TIEMPO DE RESPUESTA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content" data-aos="fade-up">
+                <h2 class="section-title">SOBRE PVB ESTUDIO</h2>
+                <p class="about-text">Somos PVB Estudio Creativo - excelencia visual sin perder el alma. Combinamos fotografía fine art de nivel galería con estrategias de marketing digital efectivas para crear campañas que realmente funcionan.</p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">●</span>
+                        <span class="feature-text">Fotografía Fine Art</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">●</span>
+                        <span class="feature-text">Producción Audiovisual</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">●</span>
+                        <span class="feature-text">Marketing Digital</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section class="agenda-section" id="agenda">
+        <div class="container">
+            <h2 class="section-title">AGENDA Y EVENTOS</h2>
+            <p class="agenda-subtitle">Reserva una consulta o revisa nuestros próximos eventos</p>
+            
+            <div class="agenda-container" data-aos="fade-up">
+                <div class="agenda-calendar-wrapper">
+                    <div class="agenda-calendar-header">
+                        <div class="calendar-nav-buttons">
+                            <button class="calendar-nav-btn" id="prevMonth">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="calendar-nav-btn" id="todayBtn">HOY</button>
+                            <button class="calendar-nav-btn" id="nextMonth">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="calendar-month-display" id="currentMonth"></div>
+                        <button class="btn-agenda-primary" id="bookAppointment">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4V10L14 12M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Reservar Consulta
+                        </button>
+                    </div>
+                    <div class="agenda-calendar-grid" id="agendaCalendar"></div>
+                </div>
+                
+                <div class="agenda-sidebar">
+                    <div class="upcoming-events-card">
+                        <h3 class="events-card-title">Próximos Eventos</h3>
+                        <div class="events-list" id="eventsList">
+                            <div class="event-item">
+                                <div class="event-date-badge">
+                                    <span class="event-day">15</span>
+                                    <span class="event-month">ENE</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title">Consulta Gratuita</h4>
+                                    <p class="event-time">10:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date-badge">
+                                    <span class="event-day">20</span>
+                                    <span class="event-month">ENE</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title">Workshop: Marketing Digital</h4>
+                                    <p class="event-time">2:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date-badge">
+                                    <span class="event-day">25</span>
+                                    <span class="event-month">ENE</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4 class="event-title">Consultoría Personalizada</h4>
+                                    <p class="event-time">11:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agenda-cta-card">
+                        <h3 class="cta-card-title">¿Necesitas ayuda inmediata?</h3>
+                        <p class="cta-card-text">Contáctanos por WhatsApp para una respuesta rápida</p>
+                        <a href="https://wa.me/56944328662?text=Hola!%20Necesito%20agendar%20una%20consulta%20con%20PVB%20Estudio" target="_blank" class="btn-whatsapp-cta" id="whatsappAgendaBtn">
+                            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+                                <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="#25D366"/>
+                            </svg>
+                            Chatear por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">¿LISTO PARA CREAR CAMPAÑAS QUE FUNCIONAN?</h2>
+            <p class="contact-subtitle">Conversemos.</p>
+            
+            <form class="contact-form" id="contactForm" data-aos="fade-up">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Tu Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="company" placeholder="Empresa" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">ENVIAR MENSAJE</button>
+            </form>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:info@panchovial.com" class="contact-link">info@panchovial.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Teléfono:</span>
+                    <a href="tel:+56944328662" class="contact-link">+56 9 4432 8662</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">PVB</span>
+                <span class="logo-dot">●</span>
+                <span class="logo-name">ESTUDIO CREATIVO</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="#work" class="footer-link">TRABAJO</a>
+                <span>|</span>
+                <a href="#about" class="footer-link">NOSOTROS</a>
+                <span>|</span>
+                <a href="#agenda" class="footer-link">AGENDA</a>
+                <span>|</span>
+                <a href="#contact" class="footer-link">CONTACTO</a>
+            </nav>
+            <p class="footer-copyright">© 2025 PVB ESTUDIO CREATIVO</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-icon">✓</div>
+            <h3>¡MENSAJE ENVIADO!</h3>
+            <p>Te responderemos en 0.8 segundos. Es broma - ¡pero seremos rápidos!</p>
+        </div>
+    </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget" style="z-index: 9999 !important;">
+        <div class="whatsapp-button" id="whatsappButton">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+                <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="#25D366"/>
+            </svg>
+        </div>
+        
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <div class="whatsapp-header">
+                <div class="whatsapp-header-content">
+                    <div class="whatsapp-avatar">
+                        <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" fill="white"/>
+                            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
+                            <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="whatsapp-info">
+                        <h4>PVB ESTUDIO</h4>
+                        <p class="whatsapp-status">
+                            <span class="status-dot"></span>
+                            En línea - Respondemos al instante
+                        </p>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsappClose">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="whatsapp-body">
+                <div class="whatsapp-message">
+                    <p>👋 ¡Hola! ¿En qué podemos ayudarte hoy?</p>
+                    <span class="message-time">En línea ahora</span>
+                </div>
+                <div class="whatsapp-message" style="margin-top: 12px;">
+                    <p>💼 Agenda una consulta gratuita</p>
+                    <p style="font-size: 12px; margin-top: 4px; opacity: 0.8;">Disponible de Lunes a Viernes</p>
+                </div>
+            </div>
+            
+            <div class="whatsapp-footer">
+                <a href="https://wa.me/56944328662?text=Hola!%20Estoy%20interesado%20en%20los%20servicios%20de%20PVB%20Estudio%20Creativo" target="_blank" class="whatsapp-send-button">
+                    <span>Iniciar Chat</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10H17M17 10L11 4M17 10L11 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // WhatsApp widget functionality
+        const whatsappButton = document.getElementById('whatsappButton');
+        const whatsappPopup = document.getElementById('whatsappPopup');
+        const whatsappClose = document.getElementById('whatsappClose');
+        const whatsappWidget = document.getElementById('whatsappWidget');
+        
+        whatsappButton.addEventListener('click', function() {
+            whatsappWidget.classList.toggle('active');
+        });
+        
+        whatsappClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            whatsappWidget.classList.remove('active');
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!whatsappWidget.contains(e.target)) {
+                whatsappWidget.classList.remove('active');
+            }
+        });
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

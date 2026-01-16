@@ -1,0 +1,14 @@
+{
+  "name": "figma-localhost-sync",
+  "version": "1.0.0",
+  "description": "Bi-directional sync between Figma designs and localhost HTML/CSS",
+  "main": "code.js",
+  "scripts": {
+    "build": "bun build code.ts --outfile=code.js && bun build ui.ts --outfile=ui.js",
+    "watch": "bun build code.ts --outfile=code.js --watch & bun build ui.ts --outfile=ui.js --watch"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.119.0",
+    "typescript": "^5.9.3"
+  }
+}

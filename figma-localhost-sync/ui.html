@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localhost Sync</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #000;
+            font-size: 12px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e5e7eb;
+            background: #f9fafb;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-button.active {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        .tab-button:hover {
+            color: #374151;
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: inherit;
+            background: white;
+            color: #000;
+        }
+
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px 12px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #1f2937;
+        }
+
+        button:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+        }
+
+        .message {
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-size: 11px;
+            display: none;
+        }
+
+        .message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .message.success {
+            display: block;
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .message.info {
+            display: block;
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .status {
+            padding: 8px;
+            background: #f3f4f6;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-size: 11px;
+            color: #6b7280;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 12px 0;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #000;
+            margin: 12px 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="export">Export</button>
+            <button class="tab-button" data-tab="import">Import</button>
+            <button class="tab-button" data-tab="settings">Settings</button>
+        </div>
+
+        <div class="content">
+            <!-- Export Tab -->
+            <div id="export-tab" class="tab-content active">
+                <div class="message" id="export-message"></div>
+
+                <div class="form-group">
+                    <label for="targetFile">Target HTML File:</label>
+                    <input 
+                        type="text" 
+                        id="targetFile" 
+                        value="exported-component.html"
+                        placeholder="e.g., settings.html, dashboard.html"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="targetCss">CSS File:</label>
+                    <input 
+                        type="text" 
+                        id="targetCss" 
+                        value="exported-component.css"
+                        placeholder="e.g., exported-component.css"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="overwriteExport" checked>
+                        Overwrite existing files
+                    </label>
+                </div>
+
+                <button id="exportButton">Export to Localhost</button>
+
+                <div class="status" id="export-status"></div>
+            </div>
+
+            <!-- Import Tab -->
+            <div id="import-tab" class="tab-content">
+                <div class="message" id="import-message"></div>
+
+                <div class="form-group">
+                    <label for="importPage">Select Page:</label>
+                    <select id="importPage">
+                        <option value="dashboard">Dashboard</option>
+                        <option value="settings">Settings</option>
+                        <option value="login">Login</option>
+                        <option value="index">Landing Page</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="localhostUrl">Localhost URL:</label>
+                    <input 
+                        type="url" 
+                        id="localhostUrl" 
+                        value="http://localhost:8000"
+                        placeholder="http://localhost:8000"
+                    >
+                </div>
+
+                <button id="importButton">Import from Localhost</button>
+
+                <div class="status" id="import-status"></div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings-tab" class="tab-content">
+                <div class="message" id="settings-message"></div>
+
+                <div class="section-title">Localhost Connection</div>
+
+                <div class="form-group">
+                    <label for="settingsUrl">API URL:</label>
+                    <input 
+                        type="url" 
+                        id="settingsUrl" 
+                        value="http://localhost:8001"
+                        placeholder="http://localhost:8001"
+                    >
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="section-title">Sync Options</div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="autoSync">
+                    <label for="autoSync" style="margin: 0;">Auto-sync on save</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="watchMode">
+                    <label for="watchMode" style="margin: 0;">Watch for changes</label>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="section-title">Design Tokens</div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="syncColors" checked>
+                    <label for="syncColors" style="margin: 0;">Sync colors</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="syncTypography" checked>
+                    <label for="syncTypography" style="margin: 0;">Sync typography</label>
+                </div>
+
+                <div class="divider"></div>
+
+                <button id="saveSettingsButton">Save Settings</button>
+
+                <div class="status" id="settings-status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ui.js"></script>
+</body>
+</html>

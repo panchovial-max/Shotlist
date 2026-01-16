@@ -1,0 +1,13 @@
+127.0.0.1 - - [15/Jan/2026 16:33:47] "OPTIONS /api/user-info HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jan/2026 16:33:56] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jan/2026 16:33:56] "OPTIONS /api/login HTTP/1.1" 200 -
+INFO:__main__:Login attempt received from IP: 127.0.0.1
+INFO:__main__:Parsed login data for email: panchovial@gmail.com
+WARNING:__main__:Login attempt for non-existent user: panchovial@gmail.com
+127.0.0.1 - - [15/Jan/2026 16:33:56] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [15/Jan/2026 16:34:03] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jan/2026 16:34:03] "OPTIONS /api/login HTTP/1.1" 200 -
+INFO:__main__:Login attempt received from IP: 127.0.0.1
+INFO:__main__:Parsed login data for email: panchovial@gmail.com
+WARNING:__main__:Login attempt for non-existent user: panchovial@gmail.com
+127.0.0.1 - - [15/Jan/2026 16:34:03] "POST /api/login HTTP/1.1" 401 -

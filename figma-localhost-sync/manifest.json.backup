@@ -1,0 +1,19 @@
+{
+  "name": "Localhost Sync",
+  "id": "shotlist-localhost-sync",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma", "figjam"],
+  "networkAccess": {
+    "allowedDomains": [
+      "https://localhost",
+      "https://127.0.0.1"
+    ],
+    "devAllowedDomains": [
+      "https://localhost",
+      "https://127.0.0.1"
+    ],
+    "reasoning": "This plugin requires network access to sync designs with the local development server running on localhost ports 8000 and 8001."
+  }
+}

@@ -1,0 +1,24 @@
+# Netlify Configuration for PVB Estudio Creativo
+# This file helps Netlify serve your site correctly
+
+[build]
+  # No build process needed - static site
+  publish = "."
+
+[[redirects]]
+  # Redirect panchovial.com to www.panchovial.com
+  from = "https://panchovial.com/*"
+  to = "https://www.panchovial.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Redirect http to https
+  from = "http://www.panchovial.com/*"
+  to = "https://www.panchovial.com/:splat"
+  status = 301
+  force = true
+
+[context.production.environment]
+  NODE_ENV = "production"
+

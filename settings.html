@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVB Estudio Creativo - Settings</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">PVB</span>
+                    <span class="logo-dot">●</span>
+                    <span class="logo-name">PVB ESTUDIO</span>
+                </a>
+            </div>
+            <div class="nav-title" id="userGreeting">SETTINGS</div>
+            <div class="nav-actions">
+                <button class="btn-refresh" onclick="window.location.href='dashboard.html'">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4L6 8M10 4L14 8M10 4V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Dashboard
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Settings Content -->
+    <main class="dashboard-main">
+        <div class="settings-page-container">
+            <!-- Page Header -->
+            <div class="settings-page-header">
+                <h1>⚙️ Settings & Preferences</h1>
+                <p>Manage your dashboard, notifications, social media, and security</p>
+            </div>
+
+            <!-- Settings Tabs -->
+            <div class="settings-tabs">
+                <button class="settings-tab active" data-tab="account">👤 Account</button>
+                <button class="settings-tab" data-tab="dashboard">📊 Dashboard</button>
+                <button class="settings-tab" data-tab="notifications">🔔 Notifications</button>
+                <button class="settings-tab" data-tab="ads">📢 Ads APIs</button>
+                <button class="settings-tab" data-tab="social">📱 Social Media</button>
+                <button class="settings-tab" data-tab="privacy">🔒 Privacy</button>
+            </div>
+
+            <!-- Account Settings -->
+            <div class="settings-tab-content active" id="account">
+                <h2>👤 Account Settings</h2>
+                
+                <!-- Account Cards Grid -->
+                <div class="account-cards-grid">
+                    <!-- Personal Information Card -->
+                    <div class="account-card">
+                        <div class="account-icon personal-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 21C20 18.2386 16.4183 16 12 16C7.58172 16 4 18.2386 4 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="account-content">
+                            <h3 class="account-title">Personal Info</h3>
+                            <p class="account-description">Profile details</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Information Card -->
+                    <div class="account-card">
+                        <div class="account-icon business-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 21V9C4 7.89543 4.89543 7 6 7H18C19.1046 7 20 7.89543 20 9V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M6 21H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="9" y="3" width="6" height="4" fill="currentColor"/>
+                                <path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M8 18H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="account-content">
+                            <h3 class="account-title">Business</h3>
+                            <p class="account-description">Work details</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferences Card -->
+                    <div class="account-card">
+                        <div class="account-icon preferences-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 5V3M12 21V19M19 12H21M3 12H5M17.657 6.343L19.071 4.929M4.929 19.071L6.343 17.657M17.657 17.657L19.071 19.071M4.929 4.929L6.343 6.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="account-content">
+                            <h3 class="account-title">Preferences</h3>
+                            <p class="account-description">Notifications</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Card -->
+                    <div class="account-card">
+                        <div class="account-icon security-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L3 6V12C3 18.6274 12 22 12 22C12 22 21 18.6274 21 12V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="account-content">
+                            <h3 class="account-title">Security</h3>
+                            <p class="account-description">Password & access</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Sections -->
+                <div class="account-form-sections">
+                    <!-- Personal Information Form -->
+                    <div class="account-form-section">
+                        <div class="form-section-header">
+                            <h3>Personal Information</h3>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" class="form-control" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" class="form-control" placeholder="johndoe">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Information Form -->
+                    <div class="account-form-section">
+                        <div class="form-section-header">
+                            <h3>Business Information</h3>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" class="form-control" placeholder="Acme Corporation">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <input type="text" id="position" class="form-control" placeholder="Marketing Manager">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="timezone">Timezone</label>
+                                <select id="timezone" class="form-control">
+                                    <option value="UTC-8">Pacific Time (PT)</option>
+                                    <option value="UTC-7">Mountain Time (MT)</option>
+                                    <option value="UTC-6">Central Time (CT)</option>
+                                    <option value="UTC-5">Eastern Time (ET)</option>
+                                    <option value="UTC">UTC</option>
+                                    <option value="UTC+1">Central European Time (CET)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferences Form -->
+                    <div class="account-form-section">
+                        <div class="form-section-header">
+                            <h3>Communication Preferences</h3>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                <span>Email Notifications</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketingEmails">
+                                <span>Marketing & Promotions</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Form -->
+                    <div class="account-form-section">
+                        <div class="form-section-header">
+                            <h3>Security Settings</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" class="form-control" placeholder="••••••••">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" class="form-control" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" class="form-control" placeholder="••••••••">
+                            </div>
+                        </div>
+                        
+                        <div class="password-strength" id="passwordStrength" style="display: none;">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <small id="strengthText">Password strength: Weak</small>
+                        </div>
+                        
+                        <button class="btn-change-password" onclick="changePassword()">
+                            Update Password
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="settings-actions">
+                    <button class="btn-cancel" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button class="btn-save" onclick="saveAccountSettings()">Save Changes</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Settings -->
+            <div class="settings-tab-content" id="dashboard">
+                <h2>📊 Dashboard Settings</h2>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label for="refreshInterval">Auto-refresh Interval</label>
+                        <select id="refreshInterval" class="form-control">
+                            <option value="30">30 seconds</option>
+                            <option value="60">1 minute</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600">10 minutes</option>
+                            <option value="0">Disabled</option>
+                        </select>
+                        <small class="form-help">How often to automatically refresh dashboard data</small>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoRefresh">
+                            <span>Enable auto-refresh</span>
+                        </label>
+                        <small class="form-help">Automatically reload data at the specified interval</small>
+                </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showAdvanced">
+                            <span>Show advanced metrics</span>
+                        </label>
+                        <small class="form-help">Display additional analytics and detailed metrics</small>
+                        </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="compactView">
+                            <span>Use compact view</span>
+                        </label>
+                        <small class="form-help">Display more data in less space</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="defaultDateRange">Default Date Range</label>
+                        <select id="defaultDateRange" class="form-control">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">Last year</option>
+                        </select>
+                        <small class="form-help">Default time range when loading dashboard</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Settings -->
+            <div class="settings-tab-content" id="notifications">
+                <h2>🔔 Notification Settings</h2>
+                <div class="settings-form">
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableNotifications">
+                            <span>Enable notifications</span>
+                        </label>
+                        <small class="form-help">Receive notifications about important events</small>
+                </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="emailReports">
+                            <span>Email daily reports</span>
+                        </label>
+                        <small class="form-help">Receive daily performance summaries via email</small>
+                </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="alertThresholds">
+                            <span>Performance threshold alerts</span>
+                        </label>
+                        <small class="form-help">Get notified when metrics exceed or drop below thresholds</small>
+                </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="campaignUpdates">
+                            <span>Campaign status updates</span>
+                        </label>
+                        <small class="form-help">Notifications when campaigns start, pause, or complete</small>
+                </div>
+
+                    <div class="form-group">
+                        <label for="notificationEmail">Notification Email</label>
+                        <input type="email" id="notificationEmail" class="form-control" placeholder="your.email@example.com">
+                        <small class="form-help">Email address for receiving notifications</small>
+                </div>
+                </div>
+            </div>
+
+            <!-- Ads APIs Settings -->
+            <div class="settings-tab-content" id="ads">
+                <h2>📢 Advertising Platform APIs</h2>
+                <p class="settings-description">Connect and configure your advertising platform APIs to sync campaign data and analytics</p>
+                
+                <div class="ads-platforms-container">
+                    <!-- Meta Ads (Facebook) -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon meta-bg">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <circle cx="16" cy="16" r="15" fill="#1877F2"/>
+                                    <path d="M20 16L16 12V16H12V20H16V28H20V20H24V16H20Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="platform-info">
+                                <h3>Meta Ads (Facebook & Instagram)</h3>
+                                <p>Connect your Meta Business account for Facebook and Instagram ads</p>
+                            </div>
+                            <div class="platform-status" id="metaStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="metaAppId">App ID</label>
+                                <input type="text" id="metaAppId" class="form-control" placeholder="Enter Meta App ID">
+                                <small class="form-help">Found in Meta Developers console</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="metaAppSecret">App Secret</label>
+                                <input type="password" id="metaAppSecret" class="form-control" placeholder="Enter App Secret">
+                                <small class="form-help">Keep this secret secure</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="metaAccessToken">Access Token</label>
+                                <input type="password" id="metaAccessToken" class="form-control" placeholder="Enter Access Token">
+                                <small class="form-help">Long-lived access token from Meta</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="metaAdAccountId">Ad Account ID</label>
+                                <input type="text" id="metaAdAccountId" class="form-control" placeholder="act_XXXXXXXX">
+                                <small class="form-help">Your Meta Ads account ID</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="metaSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('meta')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect Meta Ads
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Google Ads -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon google-bg">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <circle cx="16" cy="16" r="15" fill="#4285F4"/>
+                                    <path d="M16 8V24M8 16H24" stroke="white" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="platform-info">
+                                <h3>Google Ads</h3>
+                                <p>Connect your Google Ads account for campaign management</p>
+                            </div>
+                            <div class="platform-status" id="googleStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="googleClientId">Client ID</label>
+                                <input type="text" id="googleClientId" class="form-control" placeholder="Enter Google Client ID">
+                                <small class="form-help">OAuth 2.0 Client ID from Google Cloud Console</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="googleClientSecret">Client Secret</label>
+                                <input type="password" id="googleClientSecret" class="form-control" placeholder="Enter Client Secret">
+                                <small class="form-help">OAuth 2.0 Client Secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="googleRefreshToken">Refresh Token</label>
+                                <input type="password" id="googleRefreshToken" class="form-control" placeholder="Enter Refresh Token">
+                                <small class="form-help">OAuth refresh token for API access</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="googleCustomerId">Customer ID</label>
+                                <input type="text" id="googleCustomerId" class="form-control" placeholder="XXX-XXX-XXXX">
+                                <small class="form-help">Your Google Ads customer ID</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="googleDeveloperToken">Developer Token</label>
+                                <input type="text" id="googleDeveloperToken" class="form-control" placeholder="Enter Developer Token">
+                                <small class="form-help">Google Ads API developer token</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="googleSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('google')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect Google Ads
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TikTok Ads -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon tiktok-bg">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path d="M16 2C8.268 2 2 8.268 2 16C2 23.732 8.268 30 16 30C23.732 30 30 23.732 30 16C30 8.268 23.732 2 16 2Z" fill="#000000"/>
+                                    <path d="M20 12V10H18V8H16V10H14V12H12V14H14V16H16V18H18V20H20V18H22V16H24V14H22V12H20Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="platform-info">
+                                <h3>TikTok Ads</h3>
+                                <p>Connect your TikTok for Business account</p>
+                            </div>
+                            <div class="platform-status" id="tiktokStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="tiktokAppId">App ID</label>
+                                <input type="text" id="tiktokAppId" class="form-control" placeholder="Enter TikTok App ID">
+                                <small class="form-help">Found in TikTok Ads Manager</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="tiktokSecret">Secret Key</label>
+                                <input type="password" id="tiktokSecret" class="form-control" placeholder="Enter Secret Key">
+                                <small class="form-help">TikTok Ads API secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="tiktokAccessToken">Access Token</label>
+                                <input type="password" id="tiktokAccessToken" class="form-control" placeholder="Enter Access Token">
+                                <small class="form-help">OAuth access token from TikTok</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="tiktokAdvertiserId">Advertiser ID</label>
+                                <input type="text" id="tiktokAdvertiserId" class="form-control" placeholder="Enter Advertiser ID">
+                                <small class="form-help">Your TikTok advertiser account ID</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="tiktokSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('tiktok')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect TikTok Ads
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Ads -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon linkedin-bg">LI</div>
+                            <div class="platform-info">
+                                <h3>LinkedIn Ads</h3>
+                                <p>Connect your LinkedIn Marketing Solutions account</p>
+                            </div>
+                            <div class="platform-status" id="linkedinStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="linkedinClientId">Client ID</label>
+                                <input type="text" id="linkedinClientId" class="form-control" placeholder="Enter LinkedIn Client ID">
+                                <small class="form-help">OAuth client ID from LinkedIn Developers</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedinClientSecret">Client Secret</label>
+                                <input type="password" id="linkedinClientSecret" class="form-control" placeholder="Enter Client Secret">
+                                <small class="form-help">OAuth client secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedinAccessToken">Access Token</label>
+                                <input type="password" id="linkedinAccessToken" class="form-control" placeholder="Enter Access Token">
+                                <small class="form-help">LinkedIn Marketing API access token</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedinAccountId">Account ID</label>
+                                <input type="text" id="linkedinAccountId" class="form-control" placeholder="Enter Account ID">
+                                <small class="form-help">Your LinkedIn ad account ID</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="linkedinSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('linkedin')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect LinkedIn Ads
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- X (Twitter) Ads -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon twitter-bg">𝕏</div>
+                            <div class="platform-info">
+                                <h3>X (Twitter) Ads</h3>
+                                <p>Connect your X Ads account for campaign analytics</p>
+                            </div>
+                            <div class="platform-status" id="twitterStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="twitterApiKey">API Key</label>
+                                <input type="text" id="twitterApiKey" class="form-control" placeholder="Enter API Key">
+                                <small class="form-help">Twitter Ads API key</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterApiSecret">API Secret</label>
+                                <input type="password" id="twitterApiSecret" class="form-control" placeholder="Enter API Secret">
+                                <small class="form-help">Twitter Ads API secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterAccessToken">Access Token</label>
+                                <input type="password" id="twitterAccessToken" class="form-control" placeholder="Enter Access Token">
+                                <small class="form-help">OAuth access token</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterAccessSecret">Access Secret</label>
+                                <input type="password" id="twitterAccessSecret" class="form-control" placeholder="Enter Access Secret">
+                                <small class="form-help">OAuth access token secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterAccountId">Account ID</label>
+                                <input type="text" id="twitterAccountId" class="form-control" placeholder="Enter Account ID">
+                                <small class="form-help">Your Twitter Ads account ID</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="twitterSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('twitter')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect X Ads
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Ads -->
+                    <div class="ads-platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon youtube-bg">YT</div>
+                            <div class="platform-info">
+                                <h3>YouTube Ads</h3>
+                                <p>Connect your Google Ads account (YouTube campaigns)</p>
+                            </div>
+                            <div class="platform-status" id="youtubeStatus">
+                                <span class="status-badge disconnected">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="platform-config">
+                            <div class="form-group">
+                                <label for="youtubeClientId">Client ID</label>
+                                <input type="text" id="youtubeClientId" class="form-control" placeholder="Enter Google Client ID">
+                                <small class="form-help">Same as Google Ads OAuth credentials</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="youtubeClientSecret">Client Secret</label>
+                                <input type="password" id="youtubeClientSecret" class="form-control" placeholder="Enter Client Secret">
+                                <small class="form-help">OAuth 2.0 Client Secret</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="youtubeRefreshToken">Refresh Token</label>
+                                <input type="password" id="youtubeRefreshToken" class="form-control" placeholder="Enter Refresh Token">
+                                <small class="form-help">OAuth refresh token</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="youtubeChannelId">YouTube Channel ID</label>
+                                <input type="text" id="youtubeChannelId" class="form-control" placeholder="Enter Channel ID">
+                                <small class="form-help">Your YouTube channel ID</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="youtubeSyncEnabled">
+                                    <span>Enable automatic sync</span>
+                                </label>
+                            </div>
+                            <button class="btn-platform-connect" onclick="connectAdsPlatform('youtube')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Connect YouTube Ads
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notion Calendar Integration -->
+                <div class="notion-integration-card" style="margin-top: 2rem; padding: 1.5rem; background: var(--white); border-radius: 12px; border: 2px solid var(--gray-200);">
+                    <div class="platform-header">
+                        <div class="platform-icon notion-bg" style="width: 48px; height: 48px; background: linear-gradient(135deg, #000000 0%, #37352F 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 20px;">
+                            N
+                        </div>
+                        <div class="platform-info">
+                            <h3>Notion Calendar Integration</h3>
+                            <p>Sync your agenda with Notion calendar database</p>
+                        </div>
+                        <div class="platform-status" id="notionStatus">
+                            <span class="status-badge disconnected">Not Connected</span>
+                        </div>
+                    </div>
+                    <div class="platform-config" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="notionApiKey">Notion API Key</label>
+                            <input type="password" id="notionApiKey" class="form-control" placeholder="secret_XXXXXXXX">
+                            <small class="form-help">Get your API key from notion.so/my-integrations</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="notionDatabaseId">Database ID</label>
+                            <input type="text" id="notionDatabaseId" class="form-control" placeholder="Enter Notion Database ID">
+                            <small class="form-help">The ID of your Notion calendar database</small>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="notionSyncEnabled">
+                                <span>Enable automatic sync</span>
+                            </label>
+                            <small class="form-help">Sync events between PVB Estudio and Notion automatically</small>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="notionBidirectional">
+                                <span>Bidirectional sync</span>
+                            </label>
+                            <small class="form-help">Sync events both ways (PVB Estudio ↔ Notion)</small>
+                        </div>
+                        <button class="btn-platform-connect" onclick="connectNotion()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Connect Notion Calendar
+                        </button>
+                        <button class="btn-platform-test" onclick="testNotionConnection()" style="margin-left: 0.5rem; background: var(--gray-100); color: var(--gray-700);">
+                            Test Connection
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Settings -->
+            <div class="settings-tab-content" id="social">
+                <h2>📱 Social Media Integration</h2>
+                <div class="settings-form">
+                    <div class="social-platforms-list">
+                        <!-- Instagram -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon instagram-bg">IG</div>
+                                <div>
+                                    <h4>Instagram</h4>
+                                    <p>Connect your Instagram Business account</p>
+                                </div>
+                            </div>
+                            <button class="btn-platform" onclick="connectPlatform('instagram')">Connect</button>
+                </div>
+
+                        <!-- Facebook -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon facebook-bg">FB</div>
+                                <div>
+                                    <h4>Facebook</h4>
+                                    <p>Connect your Facebook Page</p>
+                    </div>
+                </div>
+                            <button class="btn-platform" onclick="connectPlatform('facebook')">Connect</button>
+                </div>
+
+                        <!-- LinkedIn -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon linkedin-bg">LI</div>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <p>Connect your LinkedIn Company Page</p>
+                </div>
+            </div>
+                            <button class="btn-platform" onclick="connectPlatform('linkedin')">Connect</button>
+                </div>
+
+                        <!-- TikTok -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon tiktok-bg">TT</div>
+                                <div>
+                                    <h4>TikTok</h4>
+                                    <p>Connect your TikTok Business account</p>
+                                </div>
+                            </div>
+                            <button class="btn-platform" onclick="connectPlatform('tiktok')">Connect</button>
+                </div>
+
+                        <!-- Twitter/X -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon twitter-bg">𝕏</div>
+                                <div>
+                                    <h4>Twitter / X</h4>
+                                    <p>Connect your Twitter/X account</p>
+                                </div>
+                            </div>
+                            <button class="btn-platform" onclick="connectPlatform('twitter')">Connect</button>
+                </div>
+
+                        <!-- YouTube -->
+                        <div class="platform-item">
+                            <div class="platform-info">
+                                <div class="platform-icon youtube-bg">YT</div>
+                                <div>
+                                    <h4>YouTube</h4>
+                                    <p>Connect your YouTube channel</p>
+                                </div>
+                            </div>
+                            <button class="btn-platform" onclick="connectPlatform('youtube')">Connect</button>
+                </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div class="settings-tab-content" id="privacy">
+                <h2>🔒 Security & Privacy Settings</h2>
+                <div class="settings-form">
+                    <!-- Password Change Section -->
+                    <div class="security-section">
+                        <h3>🔑 Change Password</h3>
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" class="form-control" placeholder="Enter current password">
+                            <small class="form-help">Required to verify your identity</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                            <small class="form-help">Minimum 8 characters, include letters and numbers</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+                            <small class="form-help">Re-enter your new password</small>
+                        </div>
+
+                        <div class="password-strength" id="passwordStrength" style="display: none;">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <small id="strengthText">Password strength: Weak</small>
+                        </div>
+
+                        <button class="btn-change-password" onclick="changePassword()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Update Password
+                        </button>
+                    </div>
+
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px solid var(--gray-200);">
+
+                    <!-- Privacy Settings -->
+                    <div class="privacy-section">
+                        <h3>🔐 Privacy Settings</h3>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="dataRetention">
+                                <span>Enable data retention (1 year)</span>
+                            </label>
+                            <small class="form-help">Keep historical data for long-term analysis</small>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="analyticsTracking">
+                                <span>Allow analytics tracking</span>
+                            </label>
+                            <small class="form-help">Help improve PVB Estudio by sharing usage data</small>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="shareAnonymous">
+                                <span>Share anonymous statistics</span>
+                            </label>
+                            <small class="form-help">Contribute to industry benchmarks (data is anonymized)</small>
+                        </div>
+                    </div>
+
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px solid var(--gray-200);">
+
+                    <!-- Data Management -->
+                    <div class="data-section">
+                        <h3>💾 Data Management</h3>
+                        
+                        <div class="form-group">
+                            <label>Data Export</label>
+                            <button class="btn-export-data" onclick="exportAllData()">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 3V13M10 13L7 10M10 13L13 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 13V15C3 16.1046 3.89543 17 5 17H15C16.1046 17 17 16.1046 17 15V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Export All My Data
+                            </button>
+                            <small class="form-help">Download all your data in CSV format</small>
+                        </div>
+                    </div>
+
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px solid var(--gray-200);">
+
+                    <!-- Danger Zone -->
+                    <div class="form-group danger-zone">
+                        <label>⚠️ Danger Zone</label>
+                        <button class="btn-danger" onclick="confirmDeleteAccount()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 5H17M8 9V15M12 9V15M4 5L5 17C5 18.1046 5.89543 19 7 19H13C14.1046 19 15 18.1046 15 17L16 5M7 5V3C7 2.44772 7.44772 2 8 2H12C12.5523 2 13 2.44772 13 3V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Delete Account
+                        </button>
+                        <small class="form-help text-danger">Permanently delete your account and all data</small>
+                    </div>
+                </div>
+                </div>
+
+            <!-- Save Button -->
+            <div class="settings-actions">
+                <button class="btn-cancel" onclick="window.location.href='dashboard.html'">Cancel</button>
+                <button class="btn-save" onclick="saveAllSettings()">Save All Settings</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Saving settings...</p>
+                </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget" style="z-index: 9999 !important;">
+        <div class="whatsapp-button" id="whatsappButton">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+                <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="#25D366"/>
+            </svg>
+        </div>
+        
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <div class="whatsapp-header">
+                <div class="whatsapp-header-content">
+                    <div class="whatsapp-avatar">
+                        <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" fill="white"/>
+                            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
+                            <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="whatsapp-info">
+                        <h4>PVB ESTUDIO Support</h4>
+                        <p class="whatsapp-status">
+                            <span class="status-dot"></span>
+                            Online - Usually replies instantly
+                        </p>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsappClose">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="whatsapp-body">
+                <div class="whatsapp-message">
+                    <p>👋 Need help with settings?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            
+            <div class="whatsapp-footer">
+                <a href="https://wa.me/56944328662?text=Hello!%20I%20need%20help%20with%20PVB%20Estudio%20Settings" 
+                   target="_blank" 
+                   class="whatsapp-send-button">
+                    <span>Start Chat</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10H17M17 10L11 4M17 10L11 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WhatsApp widget functionality
+        const whatsappButton = document.getElementById('whatsappButton');
+        const whatsappPopup = document.getElementById('whatsappPopup');
+        const whatsappClose = document.getElementById('whatsappClose');
+        const whatsappWidget = document.getElementById('whatsappWidget');
+
+        whatsappButton.addEventListener('click', function() {
+            whatsappWidget.classList.toggle('active');
+        });
+
+        whatsappClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            whatsappWidget.classList.remove('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!whatsappWidget.contains(e.target)) {
+                whatsappWidget.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script src="settings.js"></script>
+</body>
+</html>

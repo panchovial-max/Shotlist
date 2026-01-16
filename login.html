@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - PVB Estudio Creativo Campaign Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            color: #333;
+        }
+
+        .login-container {
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            padding: 2.5rem;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .logo-dot {
+            color: #FF0000;
+            font-size: 32px;
+        }
+
+        .logo-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #000;
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FF0000;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .remember-me input {
+            margin-right: 0.5rem;
+        }
+
+        .forgot-password {
+            color: #FF0000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: #CC0000;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 1rem;
+            background: #FF0000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+        }
+
+        .btn-login:hover {
+            background: #CC0000;
+        }
+
+        .btn-login:active {
+            transform: scale(0.98);
+        }
+
+        .btn-login:disabled {
+            background: #D4D4D4;
+            cursor: not-allowed;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .alert-error {
+            background: #FEE2E2;
+            color: #991B1B;
+            border: 1px solid #FCA5A5;
+        }
+
+        .alert-success {
+            background: #D1FAE5;
+            color: #065F46;
+            border: 1px solid #6EE7B7;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .network-status {
+            background-color: #FEE2E2;
+            color: #991B1B;
+            padding: 10px;
+            text-align: center;
+            display: none;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .debug-area {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 1rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 12px;
+        }
+
+        .debug-container {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .debug-toggle {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .client-login-section {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .client-login-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .client-login-btn {
+            background-color: #f0f0f0;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .client-login-btn:hover {
+            background-color: #e0e0e0;
+            border-color: #c0c0c0;
+        }
+
+        .client-login-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="network-status" id="networkStatus"></div>
+        <div class="login-header">
+            <div class="logo">
+                <span class="logo-text">PVB</span>
+                <span class="logo-dot">●</span>
+                <span class="logo-name">ESTUDIO CREATIVO</span>
+            </div>
+            <h1>Client Login</h1>
+            <p>Access your campaign analytics dashboard</p>
+        </div>
+
+        <div class="login-body">
+            <div class="alert alert-error" id="errorAlert"></div>
+            <div class="alert alert-success" id="successAlert"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-input"
+                        placeholder="Enter your client email"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-input"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn-login" id="loginBtn">
+                    SIGN IN
+                </button>
+            </form>
+
+            <div class="client-login-section">
+                <h3>Quick Client Access</h3>
+                <p>Select your client profile to log in quickly:</p>
+                <div class="client-login-buttons" id="clientLoginButtons">
+                    <button class="client-login-btn" data-email="techstartup@example.com">
+                        <img src="https://via.placeholder.com/24?text=TS" alt="Tech Startup">
+                        Tech Startup
+                    </button>
+                    <button class="client-login-btn" data-email="ecommerce@example.com">
+                        <img src="https://via.placeholder.com/24?text=EC" alt="E-commerce">
+                        E-commerce
+                    </button>
+                    <button class="client-login-btn" data-email="fashionbrand@example.com">
+                        <img src="https://via.placeholder.com/24?text=FB" alt="Fashion Brand">
+                        Fashion Brand
+                    </button>
+                    <button class="client-login-btn" data-email="restaurant@example.com">
+                        <img src="https://via.placeholder.com/24?text=RS" alt="Restaurant">
+                        Restaurant
+                    </button>
+                    <button class="client-login-btn" data-email="saascompany@example.com">
+                        <img src="https://via.placeholder.com/24?text=SC" alt="SaaS Company">
+                        SaaS Company
+                    </button>
+                </div>
+            </div>
+
+            <div class="debug-container">
+                <button class="debug-toggle" id="toggleDebug">Toggle Debug Info</button>
+                <pre class="debug-area" id="debugArea" style="display: none;"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8001/api';
+
+        // Enhanced Debugging Function
+        function debugLog(message, type = 'info') {
+            const debugArea = document.getElementById('debugArea');
+            const timestamp = new Date().toISOString();
+            const logMessage = `[${timestamp}] [${type.toUpperCase()}] ${message}\n`;
+            
+            if (debugArea) {
+                debugArea.textContent += logMessage;
+                debugArea.scrollTop = debugArea.scrollHeight;
+            }
+            
+            // Console logging with color coding
+            switch(type) {
+                case 'error':
+                    console.error(logMessage);
+                    break;
+                case 'warn':
+                    console.warn(logMessage);
+                    break;
+                default:
+                    console.log(logMessage);
+            }
+        }
+
+        // Quick Client Login
+        document.getElementById('clientLoginButtons').addEventListener('click', (e) => {
+            const clientButton = e.target.closest('.client-login-btn');
+            if (clientButton) {
+                const email = clientButton.getAttribute('data-email');
+                document.getElementById('email').value = email;
+                document.getElementById('password').value = 'demo123';
+                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Network Diagnostics
+        async function checkServerAvailability() {
+            try {
+                const response = await fetch(`${API_BASE}/health`, { 
+                    method: 'GET', 
+                    timeout: 5000 
+                });
+                
+                if (!response.ok) {
+                    debugLog('Server health check failed', 'error');
+                    return false;
+                }
+
+                const healthData = await response.json();
+                debugLog(`Server Health: ${JSON.stringify(healthData)}`, 'info');
+                return healthData.status === 'healthy';
+            } catch (error) {
+                debugLog(`Server availability error: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Clear previous debug logs
+            const debugArea = document.getElementById('debugArea');
+            if (debugArea) {
+                debugArea.textContent = '';
+            }
+
+            // Server availability check
+            const serverAvailable = await checkServerAvailability();
+            if (!serverAvailable) {
+                const errorAlert = document.getElementById('errorAlert');
+                errorAlert.textContent = 'Server is currently unavailable. Please try again later.';
+                errorAlert.classList.add('show');
+                debugLog('Cannot proceed: Server is not responding', 'error');
+                return;
+            }
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            const loginBtn = document.getElementById('loginBtn');
+            const errorAlert = document.getElementById('errorAlert');
+            const successAlert = document.getElementById('successAlert');
+
+            // Reset alerts
+            errorAlert.classList.remove('show');
+            successAlert.classList.remove('show');
+
+            // Disable login button
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'SIGNING IN...';
+
+            debugLog(`Attempting login for: ${email}`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        email, 
+                        password, 
+                        rememberMe 
+                    }),
+                    signal: AbortSignal.timeout(10000)
+                });
+
+                debugLog(`Response status: ${response.status}`, 'info');
+
+                // Detailed response logging
+                const responseText = await response.text();
+                debugLog(`Full response: ${responseText}`, 'info');
+
+                let data;
+                try {
+                    data = JSON.parse(responseText);
+                } catch (parseError) {
+                    debugLog(`JSON parse error: ${parseError.message}`, 'error');
+                    throw new Error('Invalid JSON response');
+                }
+
+                if (data.success) {
+                    // Store session information
+                    localStorage.setItem('session_id', data.session_id);
+                    localStorage.setItem('user_id', data.user.user_id);
+                    localStorage.setItem('email', data.user.email);
+                    localStorage.setItem('full_name', data.user.full_name);
+                    localStorage.setItem('role', data.user.role);
+
+                    // Show success message
+                    successAlert.textContent = `Welcome back, ${data.user.full_name}!`;
+                    successAlert.classList.add('show');
+                    debugLog('Login successful', 'info');
+
+                    // Redirect to dashboard
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1000);
+                } else {
+                    // Show specific error message from server
+                    const errorMessage = data.message || 'Login failed. Please check your credentials.';
+                    errorAlert.textContent = errorMessage;
+                    errorAlert.classList.add('show');
+                    debugLog(`Login failed: ${errorMessage}`, 'error');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                
+                // Detailed error handling
+                let errorMessage = 'An unexpected error occurred. Please try again.';
+                if (error.name === 'AbortError') {
+                    errorMessage = 'Request timed out. Please check your internet connection.';
+                } else if (error.message.includes('Failed to fetch')) {
+                    errorMessage = 'Unable to connect to the server. Please check your network connection.';
+                } else if (error.message.includes('HTTP error')) {
+                    errorMessage = 'Server error. Please try again later.';
+                }
+                
+                errorAlert.textContent = errorMessage;
+                errorAlert.classList.add('show');
+                debugLog(`Catch block error: ${errorMessage}`, 'error');
+            } finally {
+                // Re-enable login button
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'SIGN IN';
+            }
+        });
+
+        // Debug toggle functionality
+        document.getElementById('toggleDebug').addEventListener('click', () => {
+            const debugArea = document.getElementById('debugArea');
+            debugArea.style.display = debugArea.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Forgot Password Handler
+        document.querySelector('.forgot-password').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Password reset functionality coming soon!');
+        });
+
+        // Network status monitoring
+        function checkNetworkStatus() {
+            const networkStatus = document.getElementById('networkStatus');
+            if (!navigator.onLine) {
+                networkStatus.textContent = 'You are offline. Please check your internet connection.';
+                networkStatus.style.display = 'block';
+            } else {
+                networkStatus.style.display = 'none';
+            }
+        }
+
+        // Add network status listeners
+        window.addEventListener('online', checkNetworkStatus);
+        window.addEventListener('offline', checkNetworkStatus);
+        window.addEventListener('load', checkNetworkStatus);
+    </script>
+</body>
+</html>

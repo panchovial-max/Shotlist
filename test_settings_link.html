@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Settings Link</title>
+    <style>
+        body { font-family: Arial; padding: 50px; }
+        button { padding: 15px 30px; font-size: 16px; cursor: pointer; margin: 10px; }
+        .result { margin-top: 20px; padding: 20px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Settings Link Test</h1>
+    
+    <h2>Test 1: Direct Link</h2>
+    <a href="settings.html" style="font-size: 20px;">Click to go to Settings Page</a>
+    
+    <h2>Test 2: JavaScript Redirect (Same as Dashboard)</h2>
+    <button onclick="window.location.href='settings.html'">Go to Settings (JS)</button>
+    
+    <h2>Test 3: Absolute URL</h2>
+    <button onclick="window.location.href='http://localhost:8000/settings.html'">Go to Settings (Absolute)</button>
+    
+    <h2>Current Status:</h2>
+    <div class="result">
+        <p>✅ If you can see this page, the server is running</p>
+        <p>✅ Click any link above to test navigation to settings</p>
+        <p>Current URL: <span id="url"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('url').textContent = window.location.href;
+        console.log('Test page loaded. Current URL:', window.location.href);
+    </script>
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVB Estudio Creativo - Campaign Analytics Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">PVB</span>
+                    <span class="logo-dot">●</span>
+                    <span class="logo-name">PVB ESTUDIO</span>
+                </a>
+            </div>
+            <div class="nav-title" id="userGreeting">CAMPAIGN ANALYTICS</div>
+            <div class="nav-actions">
+                <button class="btn-refresh" id="refreshData">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C11.5358 3 12.9476 3.5 14.0711 4.34315" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 3V7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Refresh
+                </button>
+                <button class="btn-settings" id="settingsBtn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 3V2M10 18V17M17 10H18M2 10H3M15.657 4.343L16.364 3.636M3.636 16.364L4.343 15.657M15.657 15.657L16.364 16.364M3.636 3.636L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Settings
+                </button>
+                <button class="btn-export" id="exportData">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 3V13M10 3L7 6M10 3L13 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 13V15C3 16.1046 3.89543 17 5 17H15C16.1046 17 17 16.1046 17 15V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Export
+                </button>
+                <button class="btn-export" id="logoutBtn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M13 3H17V17H13M7 7L3 10L7 13M3 10H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <!-- Campaign Filter -->
+        <section class="campaign-filter">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="campaignSelect">Campaign:</label>
+                    <select id="campaignSelect" class="filter-select">
+                        <option value="all">All Campaigns</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dateRange">Date Range:</label>
+                    <select id="dateRange" class="filter-select">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30" selected>Last 30 Days</option>
+                        <option value="90">Last 90 Days</option>
+                        <option value="365">Last Year</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="campaignType">Type:</label>
+                    <select id="campaignType" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="seo">SEO</option>
+                        <option value="email">Email</option>
+                        <option value="paid_ads">Paid Ads</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Cards -->
+        <section class="kpi-section">
+            <div class="kpi-grid">
+                <div class="kpi-card" data-kpi="roi">
+                    <div class="kpi-icon roi-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 8V24M16 8L20 12M16 8L12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-label">ROI</div>
+                        <div class="kpi-value" id="totalROI">0%</div>
+                        <div class="kpi-change positive" id="roiChange">+0%</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card" data-kpi="revenue">
+                    <div class="kpi-icon revenue-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26C21.5228 26 26 21.5228 26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 11V21M13 13H17.5C18.3284 13 19 13.6716 19 14.5C19 15.3284 18.3284 16 17.5 16H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-label">Revenue</div>
+                        <div class="kpi-value" id="totalRevenue">$0</div>
+                        <div class="kpi-change positive" id="revenueChange">+0%</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card" data-kpi="conversions">
+                    <div class="kpi-icon conversions-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M8 16L14 22L24 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-label">Conversions</div>
+                        <div class="kpi-value" id="totalConversions">0</div>
+                        <div class="kpi-change positive" id="conversionsChange">+0%</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card" data-kpi="roas">
+                    <div class="kpi-icon roas-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M6 20L16 10L20 14L26 8M26 8V13M26 8H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-label">ROAS</div>
+                        <div class="kpi-value" id="totalROAS">0x</div>
+                        <div class="kpi-change positive" id="roasChange">+0%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="charts-grid">
+                <!-- ROI Trend Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">ROI Trend</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-dot" style="background: #FF0000"></span>
+                                ROI %
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Revenue vs Cost Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Revenue vs Cost</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-dot" style="background: #00FF00"></span>
+                                Revenue
+                            </span>
+                            <span class="legend-item">
+                                <span class="legend-dot" style="background: #FF0000"></span>
+                                Cost
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Performance -->
+        <section class="social-section">
+            <div class="section-header">
+                <h2 class="section-title">Social Media Performance</h2>
+                <button class="btn-config" id="socialMediaConfig">⚙️ Configure</button>
+            </div>
+            <div class="social-grid">
+                <div class="social-card instagram">
+                    <div class="social-header">
+                        <div class="social-icon">IG</div>
+                        <h4>Instagram</h4>
+                    </div>
+                    <div class="social-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Impressions</span>
+                            <span class="stat-value" id="igImpressions">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Engagement</span>
+                            <span class="stat-value" id="igEngagement">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Followers</span>
+                            <span class="stat-value" id="igFollowers">+0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-card facebook">
+                    <div class="social-header">
+                        <div class="social-icon">FB</div>
+                        <h4>Facebook</h4>
+                    </div>
+                    <div class="social-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Impressions</span>
+                            <span class="stat-value" id="fbImpressions">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Engagement</span>
+                            <span class="stat-value" id="fbEngagement">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Reach</span>
+                            <span class="stat-value" id="fbReach">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-card linkedin">
+                    <div class="social-header">
+                        <div class="social-icon">LI</div>
+                        <h4>LinkedIn</h4>
+                    </div>
+                    <div class="social-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Impressions</span>
+                            <span class="stat-value" id="liImpressions">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Engagement</span>
+                            <span class="stat-value" id="liEngagement">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Clicks</span>
+                            <span class="stat-value" id="liClicks">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-card tiktok">
+                    <div class="social-header">
+                        <div class="social-icon">TT</div>
+                        <h4>TikTok</h4>
+                    </div>
+                    <div class="social-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Views</span>
+                            <span class="stat-value" id="ttViews">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Engagement</span>
+                            <span class="stat-value" id="ttEngagement">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Shares</span>
+                            <span class="stat-value" id="ttShares">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Performance -->
+        <section class="seo-section">
+            <div class="section-header">
+                <h2 class="section-title">SEO Performance</h2>
+            </div>
+            <div class="seo-grid">
+                <div class="seo-card">
+                    <div class="seo-metric">
+                        <div class="metric-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M20 8L24 16H32L26 22L28 30L20 25L12 30L14 22L8 16H16L20 8Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Organic Traffic</span>
+                            <span class="metric-value" id="organicTraffic">0</span>
+                            <span class="metric-change positive" id="trafficChange">+0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-card">
+                    <div class="seo-metric">
+                        <div class="metric-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M28 28L35 35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Keyword Rankings</span>
+                            <span class="metric-value" id="keywordRankings">0</span>
+                            <span class="metric-change positive" id="keywordsChange">+0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-card">
+                    <div class="seo-metric">
+                        <div class="metric-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M12 20H28M20 12V28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Backlinks</span>
+                            <span class="metric-value" id="backlinks">0</span>
+                            <span class="metric-change positive" id="backlinksChange">+0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-card">
+                    <div class="seo-metric">
+                        <div class="metric-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M10 30L20 15L25 20L30 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Domain Authority</span>
+                            <span class="metric-value" id="domainAuthority">0</span>
+                            <span class="metric-change positive" id="daChange">+0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaign Calendar -->
+        <section class="calendar-section">
+            <div class="section-header">
+                <h2 class="section-title">CAMPAIGN CALENDAR</h2>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-nav">
+                        <button onclick="window.calendarAPI.previousMonth()">← Prev</button>
+                        <button onclick="window.calendarAPI.goToToday()">Today</button>
+                        <button onclick="window.calendarAPI.nextMonth()">Next →</button>
+                    </div>
+                    <div class="calendar-month" id="calendarMonth">Loading...</div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="upcoming-events">
+                <h3>📅 Upcoming Events (Next 7 Days)</h3>
+                <div id="upcomingEventsList"></div>
+            </div>
+        </section>
+
+        <!-- Campaign List -->
+        <section class="campaigns-section">
+            <div class="section-header">
+                <h2 class="section-title">Active Campaigns</h2>
+                <button class="btn-add" id="addCampaign">+ Add Campaign</button>
+            </div>
+            <div class="campaigns-table-container">
+                <table class="campaigns-table" id="campaignsTable">
+                    <thead>
+                        <tr>
+                            <th>Campaign Name</th>
+                            <th>Client</th>
+                            <th>Type</th>
+                            <th>Budget</th>
+                            <th>Spent</th>
+                            <th>ROI</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="campaignsTableBody">
+                        <!-- Data will be loaded via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="settings-section" id="settingsSection">
+            <div class="section-header">
+                <h2 class="section-title">⚙️ Settings & Preferences</h2>
+            </div>
+            <div class="settings-grid">
+                <!-- Account Settings Card -->
+                <div class="settings-card" onclick="window.location.href='settings.html#account'">
+                    <div class="settings-card-icon">👤</div>
+                    <h3>Account Settings</h3>
+                    <p>Manage your profile, email, and personal information</p>
+                    <button class="settings-btn" onclick="event.stopPropagation(); window.location.href='settings.html#account'">Configure</button>
+                </div>
+
+                <!-- Social Media Settings Card -->
+                <div class="settings-card" onclick="window.location.href='settings.html#social'">
+                    <div class="settings-card-icon">📱</div>
+                    <h3>Social Media Accounts</h3>
+                    <p>Connect and manage your social media platforms</p>
+                    <button class="settings-btn" onclick="event.stopPropagation(); window.location.href='settings.html#social'">Manage</button>
+                </div>
+
+                <!-- Notifications Settings Card -->
+                <div class="settings-card" onclick="window.location.href='settings.html#notifications'">
+                    <div class="settings-card-icon">🔔</div>
+                    <h3>Notifications</h3>
+                    <p>Control email and in-app notifications</p>
+                    <button class="settings-btn" onclick="event.stopPropagation(); window.location.href='settings.html#notifications'">Customize</button>
+                </div>
+
+                <!-- Security & Privacy Settings Card -->
+                <div class="settings-card" onclick="window.location.href='settings.html#privacy'">
+                    <div class="settings-card-icon">🔒</div>
+                    <h3>Security & Privacy</h3>
+                    <p>Data retention and privacy preferences</p>
+                    <button class="settings-btn" onclick="event.stopPropagation(); window.location.href='settings.html#privacy'">Review</button>
+                </div>
+
+                <!-- Dashboard Settings Card -->
+                <div class="settings-card" onclick="window.location.href='settings.html#dashboard'">
+                    <div class="settings-card-icon">📊</div>
+                    <h3>Dashboard Settings</h3>
+                    <p>Auto-refresh, metrics, and display options</p>
+                    <button class="settings-btn" onclick="event.stopPropagation(); window.location.href='settings.html#dashboard'">Configure</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Loading campaign data...</p>
+    </div>
+
+    <!-- Event Modal -->
+    <div class="event-modal" id="eventModal">
+        <div class="event-modal-content">
+            <button class="event-modal-close" onclick="window.calendarAPI.closeModal()">&times;</button>
+            <h2 class="event-modal-title" id="modalEventTitle">Event Title</h2>
+
+            <div class="event-modal-detail">
+                <label>Description</label>
+                <p id="modalEventDescription">Event description</p>
+            </div>
+
+            <div class="event-modal-detail">
+                <label>Date</label>
+                <p id="modalEventDate">Date</p>
+            </div>
+
+            <div class="event-modal-detail">
+                <label>Time</label>
+                <p id="modalEventTime">Time</p>
+            </div>
+
+            <div class="event-modal-detail">
+                <label>Type</label>
+                <p id="modalEventType">Type</p>
+            </div>
+
+            <div class="event-modal-detail">
+                <label>Campaign</label>
+                <p id="modalEventCampaign">Campaign</p>
+            </div>
+
+            <div class="event-modal-detail">
+                <label>Priority</label>
+                <span class="event-badge" id="modalEventPriority">HIGH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget" style="z-index: 9999 !important;">
+        <div class="whatsapp-button" id="whatsappButton">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+                <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="#25D366"/>
+            </svg>
+        </div>
+        
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <div class="whatsapp-header">
+                <div class="whatsapp-header-content">
+                    <div class="whatsapp-avatar">
+                        <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" fill="white"/>
+                            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.479.649 4.911 1.88 7.069L2 30l7.191-1.838A13.953 13.953 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
+                            <path d="M22.784 19.064c-.374-.188-2.214-1.092-2.556-1.217-.342-.126-.591-.188-.84.188-.249.375-.966 1.217-1.185 1.467-.218.249-.436.281-.81.094-.375-.188-1.581-.583-3.011-1.858-1.113-.992-1.865-2.217-2.083-2.592-.218-.374-.023-.577.164-.764.169-.168.374-.437.562-.656.187-.218.249-.374.374-.624.125-.249.062-.468-.031-.656-.094-.187-.84-2.024-1.151-2.773-.303-.729-.61-.63-.84-.641-.218-.01-.467-.013-.716-.013s-.654.094-1 .468c-.343.375-1.31 1.28-1.31 3.118 0 1.837 1.341 3.612 1.529 3.861.187.25 2.646 4.037 6.41 5.659.896.386 1.595.616 2.14.789.899.286 1.719.246 2.366.149.722-.108 2.214-.905 2.525-1.779.312-.874.312-1.623.218-1.779-.093-.156-.343-.25-.717-.437z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="whatsapp-info">
+                        <h4>PVB ESTUDIO Support</h4>
+                        <p class="whatsapp-status">
+                            <span class="status-dot"></span>
+                            Online - Usually replies instantly
+                        </p>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsappClose">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="whatsapp-body">
+                <div class="whatsapp-message">
+                    <p>👋 Hi! Need help with your campaigns?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            
+            <div class="whatsapp-footer">
+                <a href="https://wa.me/56944328662?text=Hello!%20I%20need%20help%20with%20PVB%20Estudio%20Dashboard" 
+                   target="_blank" 
+                   class="whatsapp-send-button">
+                    <span>Start Chat</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10H17M17 10L11 4M17 10L11 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WhatsApp widget functionality
+        const whatsappButton = document.getElementById('whatsappButton');
+        const whatsappPopup = document.getElementById('whatsappPopup');
+        const whatsappClose = document.getElementById('whatsappClose');
+        const whatsappWidget = document.getElementById('whatsappWidget');
+
+        whatsappButton.addEventListener('click', function() {
+            whatsappWidget.classList.toggle('active');
+        });
+
+        whatsappClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            whatsappWidget.classList.remove('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!whatsappWidget.contains(e.target)) {
+                whatsappWidget.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script src="calendar.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

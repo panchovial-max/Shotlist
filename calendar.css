@@ -1,0 +1,337 @@
+/* Campaign Calendar Styles */
+
+.calendar-section {
+    margin-bottom: 2rem;
+}
+
+.calendar-container {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar-nav button {
+    background: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.calendar-nav button:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+.calendar-month {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-600);
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+
+.calendar-day {
+    min-height: 100px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    padding: 0.5rem;
+    background: var(--white);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.calendar-day:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.other-month {
+    background: var(--gray-100);
+    opacity: 0.5;
+}
+
+.calendar-day.today {
+    border: 2px solid var(--red);
+    background: rgba(255, 0, 0, 0.05);
+}
+
+.calendar-day-number {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-700);
+    margin-bottom: 0.25rem;
+}
+
+.calendar-events {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.calendar-event {
+    font-size: 11px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+}
+
+.calendar-event:hover {
+    transform: scale(1.05);
+}
+
+.calendar-event.campaign_start {
+    background: rgba(0, 200, 83, 0.2);
+    color: var(--green);
+    border-left: 3px solid var(--green);
+}
+
+.calendar-event.campaign_end {
+    background: rgba(255, 0, 0, 0.2);
+    color: var(--red);
+    border-left: 3px solid var(--red);
+}
+
+.calendar-event.meeting {
+    background: rgba(33, 150, 243, 0.2);
+    color: var(--blue);
+    border-left: 3px solid var(--blue);
+}
+
+.calendar-event.deadline {
+    background: rgba(255, 152, 0, 0.2);
+    color: var(--orange);
+    border-left: 3px solid var(--orange);
+}
+
+.calendar-event.milestone {
+    background: rgba(156, 39, 176, 0.2);
+    color: var(--purple);
+    border-left: 3px solid var(--purple);
+}
+
+/* Event Modal */
+.event-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-modal.active {
+    display: flex;
+}
+
+.event-modal-content {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.event-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gray-600);
+}
+
+.event-modal-close:hover {
+    color: var(--black);
+}
+
+.event-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.event-modal-detail {
+    margin-bottom: 1rem;
+}
+
+.event-modal-detail label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.event-modal-detail p {
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+.event-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.event-badge.high {
+    background: rgba(255, 0, 0, 0.2);
+    color: var(--red);
+}
+
+.event-badge.medium {
+    background: rgba(255, 152, 0, 0.2);
+    color: var(--orange);
+}
+
+.event-badge.low {
+    background: rgba(156, 39, 176, 0.2);
+    color: var(--purple);
+}
+
+/* Upcoming Events List */
+.upcoming-events {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+.upcoming-events h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.upcoming-event-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.upcoming-event-item:hover {
+    border-color: var(--red);
+    transform: translateX(5px);
+}
+
+.upcoming-event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 0.5rem;
+    background: var(--gray-100);
+    border-radius: 8px;
+}
+
+.upcoming-event-day {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+}
+
+.upcoming-event-month {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+}
+
+.upcoming-event-details {
+    flex: 1;
+}
+
+.upcoming-event-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+}
+
+.upcoming-event-time {
+    font-size: 12px;
+    color: var(--gray-600);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-day {
+        min-height: auto;
+    }
+
+    .calendar-day-header {
+        display: none;
+    }
+
+    .calendar-day-number {
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+
+    .upcoming-event-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}

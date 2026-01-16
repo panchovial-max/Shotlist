@@ -1,0 +1,23 @@
+{
+  "name": "Localhost Sync",
+  "id": "shotlist-localhost-sync",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma", "figjam"],
+  "networkAccess": {
+    "allowedDomains": [
+      "http://localhost:8000",
+      "http://localhost:8001",
+      "http://127.0.0.1:8000",
+      "http://127.0.0.1:8001"
+    ],
+    "devAllowedDomains": [
+      "http://localhost:8000",
+      "http://localhost:8001",
+      "http://127.0.0.1:8000",
+      "http://127.0.0.1:8001"
+    ],
+    "reasoning": "Required for bi-directional sync with localhost development server. Supports design export to HTML/CSS and import of code changes."
+  }
+}

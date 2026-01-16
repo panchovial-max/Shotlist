@@ -1,0 +1,445 @@
+2025-10-23 16:57:50,052 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:57:50,052 - DEBUG - Content Length: 56
+2025-10-23 16:57:50,052 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 16:57:50,052 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:57:50,053 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:57:50,053 - WARNING - Login attempt for non-existent user: techstartup@example.com
+2025-10-23 16:58:04,338 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:58:04,338 - DEBUG - Content Length: 75
+2025-10-23 16:58:04,338 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 16:58:04,339 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:58:04,339 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:58:04,339 - WARNING - Login attempt for non-existent user: techstartup@example.com
+2025-10-23 16:58:17,112 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:58:17,112 - DEBUG - Content Length: 75
+2025-10-23 16:58:17,112 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 16:58:17,112 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:58:17,112 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:58:17,113 - WARNING - Login attempt for non-existent user: techstartup@example.com
+2025-10-23 16:58:49,617 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:58:49,617 - DEBUG - Content Length: 75
+2025-10-23 16:58:49,618 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 16:58:49,618 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:58:49,618 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:58:49,618 - WARNING - Login attempt for non-existent user: techstartup@example.com
+2025-10-23 16:59:11,913 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:59:11,913 - DEBUG - Content Length: 75
+2025-10-23 16:59:11,913 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 16:59:11,913 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:59:11,913 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:59:11,914 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 16:59:11,914 - ERROR - Unexpected login error: 'sqlite3.Row' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/franciscovialbrown/Documents/GitHub/Shotlist/api_server.py", line 1007, in handle_login
+    if user.get('is_active', 1) == 0:
+       ^^^^^^^^
+AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2025-10-23 16:59:36,455 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 16:59:36,455 - DEBUG - Content Length: 75
+2025-10-23 16:59:36,455 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 16:59:36,455 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 16:59:36,456 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 16:59:36,457 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 16:59:36,457 - INFO - Successful login for user: techstartup@example.com
+2025-10-23 17:08:42,870 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 17:08:42,870 - DEBUG - Content Length: 69
+2025-10-23 17:08:42,870 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-23 17:08:42,870 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-23 17:08:42,872 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-23 17:08:42,873 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-23 17:08:45,379 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 17:08:45,379 - DEBUG - Content Length: 75
+2025-10-23 17:08:45,379 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 17:08:45,379 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 17:08:45,379 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 17:08:45,380 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 17:08:45,380 - INFO - Successful login for user: techstartup@example.com
+2025-10-23 17:13:25,379 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 17:13:25,379 - DEBUG - Content Length: 56
+2025-10-23 17:13:25,380 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 17:13:25,380 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 17:13:25,380 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 17:13:25,380 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 17:13:30,660 - ERROR - Unexpected login error: database is locked
+Traceback (most recent call last):
+  File "/Users/franciscovialbrown/Documents/GitHub/Shotlist/api_server.py", line 1033, in handle_login
+    cursor.execute('''
+sqlite3.OperationalError: database is locked
+2025-10-23 22:23:15,731 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:23:15,741 - DEBUG - Content Length: 56
+2025-10-23 22:23:15,741 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 22:23:15,741 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 22:23:15,742 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 22:23:15,742 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 22:23:20,972 - ERROR - Unexpected login error: database is locked
+Traceback (most recent call last):
+  File "/Users/franciscovialbrown/Documents/GitHub/Shotlist/api_server.py", line 1051, in handle_login
+    cursor.execute('''
+sqlite3.OperationalError: database is locked
+2025-10-23 22:23:36,024 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:23:36,024 - DEBUG - Content Length: 56
+2025-10-23 22:23:36,024 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 22:23:36,024 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 22:23:36,025 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 22:23:36,025 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 22:23:41,271 - ERROR - Unexpected login error: database is locked
+Traceback (most recent call last):
+  File "/Users/franciscovialbrown/Documents/GitHub/Shotlist/api_server.py", line 1051, in handle_login
+    cursor.execute('''
+sqlite3.OperationalError: database is locked
+2025-10-23 22:23:54,842 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:23:54,842 - DEBUG - Content Length: 56
+2025-10-23 22:23:54,842 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 22:23:54,842 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 22:23:54,843 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 22:23:54,843 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 22:23:54,844 - INFO - Successful login for user: techstartup@example.com
+2025-10-23 22:24:04,036 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:04,036 - DEBUG - Content Length: 56
+2025-10-23 22:24:04,036 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123"}'
+2025-10-23 22:24:04,036 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 22:24:04,037 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 22:24:04,038 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 22:24:04,038 - INFO - Successful login for user: techstartup@example.com
+2025-10-23 22:24:04,316 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:04,316 - DEBUG - Content Length: 54
+2025-10-23 22:24:04,316 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123"}'
+2025-10-23 22:24:04,316 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-23 22:24:04,317 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-23 22:24:04,317 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-23 22:24:04,317 - INFO - Successful login for user: ecommerce@example.com
+2025-10-23 22:24:04,633 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:04,633 - DEBUG - Content Length: 57
+2025-10-23 22:24:04,633 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123"}'
+2025-10-23 22:24:04,633 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-23 22:24:04,633 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-23 22:24:04,634 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-23 22:24:04,634 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-23 22:24:05,042 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:05,043 - DEBUG - Content Length: 55
+2025-10-23 22:24:05,043 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123"}'
+2025-10-23 22:24:05,043 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-23 22:24:05,043 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-23 22:24:05,045 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-23 22:24:05,046 - INFO - Successful login for user: restaurant@example.com
+2025-10-23 22:24:05,335 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:05,335 - DEBUG - Content Length: 56
+2025-10-23 22:24:05,336 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123"}'
+2025-10-23 22:24:05,336 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-23 22:24:05,336 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-23 22:24:05,337 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-23 22:24:05,338 - INFO - Successful login for user: saascompany@example.com
+2025-10-23 22:24:05,476 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:24:05,476 - DEBUG - Content Length: 52
+2025-10-23 22:24:05,476 - DEBUG - Received POST data: b'{"email":"admin@shotlist.com","password":"admin123"}'
+2025-10-23 22:24:05,477 - INFO - Parsed login data for email: admin@shotlist.com
+2025-10-23 22:24:05,477 - DEBUG - Searching for user with email: admin@shotlist.com
+2025-10-23 22:24:05,478 - DEBUG - Verifying password for user: admin@shotlist.com
+2025-10-23 22:24:05,479 - INFO - Successful login for user: admin@shotlist.com
+2025-10-23 22:25:19,466 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:25:19,467 - DEBUG - Content Length: 69
+2025-10-23 22:25:19,467 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:25:19,467 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-23 22:25:19,467 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-23 22:25:19,468 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-23 22:25:31,199 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:25:31,199 - DEBUG - Content Length: 69
+2025-10-23 22:25:31,199 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:25:31,199 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-23 22:25:31,200 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-23 22:25:31,200 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-23 22:25:36,082 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:25:36,082 - DEBUG - Content Length: 73
+2025-10-23 22:25:36,082 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:25:36,083 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-23 22:25:36,083 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-23 22:25:36,083 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-23 22:25:36,084 - INFO - Successful login for user: ecommerce@example.com
+2025-10-23 22:25:37,198 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:25:37,198 - DEBUG - Content Length: 73
+2025-10-23 22:25:37,199 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:25:37,199 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-23 22:25:37,199 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-23 22:25:37,200 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-23 22:25:37,201 - INFO - Successful login for user: ecommerce@example.com
+2025-10-23 22:36:14,804 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:36:14,804 - DEBUG - Content Length: 69
+2025-10-23 22:36:14,804 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:36:14,804 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-23 22:36:14,804 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-23 22:36:14,805 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-23 22:36:17,820 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-23 22:36:17,820 - DEBUG - Content Length: 75
+2025-10-23 22:36:17,820 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-23 22:36:17,820 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-23 22:36:17,822 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-23 22:36:17,823 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-23 22:36:17,823 - INFO - Successful login for user: techstartup@example.com
+2025-10-27 09:45:38,532 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 09:45:38,815 - DEBUG - Content Length: 69
+2025-10-27 09:45:38,815 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-27 09:45:38,816 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-27 09:45:38,816 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-27 09:45:38,817 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-27 09:45:40,284 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 09:45:40,284 - DEBUG - Content Length: 75
+2025-10-27 09:45:40,284 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 09:45:40,284 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-27 09:45:40,284 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-27 09:45:40,285 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-27 09:45:40,449 - INFO - Successful login for user: techstartup@example.com
+2025-10-27 15:57:55,110 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 15:57:55,110 - DEBUG - Content Length: 69
+2025-10-27 15:57:55,110 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-27 15:57:55,110 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-27 15:57:55,111 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-27 15:57:55,111 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-27 15:58:02,315 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 15:58:02,315 - DEBUG - Content Length: 69
+2025-10-27 15:58:02,315 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-27 15:58:02,315 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-27 15:58:02,315 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-27 15:58:02,316 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-27 15:58:04,214 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 15:58:04,214 - DEBUG - Content Length: 73
+2025-10-27 15:58:04,214 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 15:58:04,214 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-27 15:58:04,214 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-27 15:58:04,215 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-27 15:58:04,216 - INFO - Successful login for user: ecommerce@example.com
+2025-10-27 15:58:05,163 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 15:58:05,163 - DEBUG - Content Length: 73
+2025-10-27 15:58:05,164 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 15:58:05,164 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-27 15:58:05,164 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-27 15:58:05,164 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-27 15:58:05,165 - INFO - Successful login for user: ecommerce@example.com
+2025-10-27 16:01:36,485 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 16:01:36,485 - DEBUG - Content Length: 76
+2025-10-27 16:01:36,485 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 16:01:36,485 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 16:01:36,485 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 16:01:36,486 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 16:01:36,487 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 16:01:37,266 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 16:01:37,266 - DEBUG - Content Length: 76
+2025-10-27 16:01:37,266 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 16:01:37,267 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 16:01:37,267 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 16:01:37,267 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 16:01:37,268 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 17:20:16,182 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:20:16,182 - DEBUG - Content Length: 69
+2025-10-27 17:20:16,182 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:20:16,182 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-27 17:20:16,183 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-27 17:20:16,183 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-27 17:20:18,273 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:20:18,273 - DEBUG - Content Length: 76
+2025-10-27 17:20:18,273 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:20:18,273 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 17:20:18,274 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 17:20:18,275 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 17:20:18,276 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 17:20:19,172 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:20:19,172 - DEBUG - Content Length: 76
+2025-10-27 17:20:19,172 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:20:19,172 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 17:20:19,173 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 17:20:19,173 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 17:20:19,174 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 17:25:12,909 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:25:12,957 - DEBUG - Content Length: 69
+2025-10-27 17:25:12,957 - DEBUG - Received POST data: b'{"email":"demo@shotlist.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:25:12,957 - INFO - Parsed login data for email: demo@shotlist.com
+2025-10-27 17:25:12,957 - DEBUG - Searching for user with email: demo@shotlist.com
+2025-10-27 17:25:12,959 - WARNING - Login attempt for non-existent user: demo@shotlist.com
+2025-10-27 17:25:13,694 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:25:13,695 - DEBUG - Content Length: 75
+2025-10-27 17:25:13,695 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:25:13,695 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-27 17:25:13,695 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-27 17:25:13,696 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-27 17:25:13,697 - INFO - Successful login for user: techstartup@example.com
+2025-10-27 17:25:14,528 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:25:14,528 - DEBUG - Content Length: 75
+2025-10-27 17:25:14,528 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:25:14,528 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-27 17:25:14,528 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-27 17:25:14,529 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-27 17:25:14,530 - INFO - Successful login for user: techstartup@example.com
+2025-10-27 17:26:02,891 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:26:02,891 - DEBUG - Content Length: 74
+2025-10-27 17:26:02,891 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:26:02,891 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-27 17:26:02,891 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-27 17:26:02,892 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-27 17:26:02,892 - INFO - Successful login for user: restaurant@example.com
+2025-10-27 17:34:11,093 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:34:11,094 - DEBUG - Content Length: 74
+2025-10-27 17:34:11,094 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:34:11,094 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-27 17:34:11,094 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-27 17:34:11,095 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-27 17:34:11,095 - INFO - Successful login for user: restaurant@example.com
+2025-10-27 17:34:12,025 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 17:34:12,025 - DEBUG - Content Length: 74
+2025-10-27 17:34:12,025 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 17:34:12,025 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-27 17:34:12,025 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-27 17:34:12,026 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-27 17:34:12,026 - INFO - Successful login for user: restaurant@example.com
+2025-10-27 21:18:40,276 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 21:18:40,310 - DEBUG - Content Length: 76
+2025-10-27 21:18:40,310 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 21:18:40,310 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 21:18:40,312 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 21:18:40,313 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 21:18:40,313 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 21:18:41,475 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 21:18:41,475 - DEBUG - Content Length: 76
+2025-10-27 21:18:41,475 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 21:18:41,475 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 21:18:41,476 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 21:18:41,477 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 21:18:41,477 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 21:58:50,150 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 21:58:50,151 - DEBUG - Content Length: 76
+2025-10-27 21:58:50,151 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 21:58:50,151 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-27 21:58:50,167 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-27 21:58:50,222 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-27 21:58:50,234 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-27 22:57:21,101 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 22:57:21,146 - DEBUG - Content Length: 73
+2025-10-27 22:57:21,146 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 22:57:21,146 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-27 22:57:21,147 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-27 22:57:21,147 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-27 22:57:21,163 - INFO - Successful login for user: ecommerce@example.com
+2025-10-27 22:57:22,099 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 22:57:22,099 - DEBUG - Content Length: 73
+2025-10-27 22:57:22,099 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 22:57:22,099 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-27 22:57:22,099 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-27 22:57:22,100 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-27 22:57:22,100 - INFO - Successful login for user: ecommerce@example.com
+2025-10-27 23:58:00,244 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 23:58:00,258 - DEBUG - Content Length: 75
+2025-10-27 23:58:00,258 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 23:58:00,258 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-27 23:58:00,258 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-27 23:58:00,297 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-27 23:58:00,880 - INFO - Successful login for user: saascompany@example.com
+2025-10-27 23:58:00,952 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 23:58:00,952 - DEBUG - Content Length: 75
+2025-10-27 23:58:00,952 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 23:58:00,953 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-27 23:58:00,953 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-27 23:58:00,953 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-27 23:58:00,954 - INFO - Successful login for user: saascompany@example.com
+2025-10-27 23:58:01,911 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-27 23:58:01,911 - DEBUG - Content Length: 75
+2025-10-27 23:58:01,911 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-27 23:58:01,911 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-27 23:58:01,912 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-27 23:58:01,912 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-27 23:58:01,912 - INFO - Successful login for user: saascompany@example.com
+2025-10-28 00:58:41,967 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 00:58:41,968 - DEBUG - Content Length: 75
+2025-10-28 00:58:41,968 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 00:58:41,968 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-28 00:58:41,968 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-28 00:58:41,971 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-28 00:58:41,972 - INFO - Successful login for user: saascompany@example.com
+2025-10-28 00:58:43,067 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 00:58:43,067 - DEBUG - Content Length: 73
+2025-10-28 00:58:43,067 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 00:58:43,067 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-28 00:58:43,067 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-28 00:58:43,068 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-28 00:58:43,068 - INFO - Successful login for user: ecommerce@example.com
+2025-10-28 01:03:19,926 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:03:19,946 - DEBUG - Content Length: 75
+2025-10-28 01:03:19,946 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:03:19,947 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-28 01:03:19,947 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-28 01:03:19,948 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-28 01:03:19,948 - INFO - Successful login for user: techstartup@example.com
+2025-10-28 01:03:20,363 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:03:20,363 - DEBUG - Content Length: 75
+2025-10-28 01:03:20,363 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:03:20,363 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-28 01:03:20,363 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-28 01:03:20,363 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-28 01:03:20,364 - INFO - Successful login for user: techstartup@example.com
+2025-10-28 01:12:02,994 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:12:03,022 - DEBUG - Content Length: 75
+2025-10-28 01:12:03,022 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:12:03,022 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-28 01:12:03,023 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-28 01:12:03,024 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-28 01:12:03,056 - INFO - Successful login for user: techstartup@example.com
+2025-10-28 01:12:03,982 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:12:03,982 - DEBUG - Content Length: 75
+2025-10-28 01:12:03,982 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:12:03,982 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-28 01:12:03,983 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-28 01:12:03,983 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-28 01:12:03,984 - INFO - Successful login for user: techstartup@example.com
+2025-10-28 01:13:52,715 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:13:52,722 - DEBUG - Content Length: 75
+2025-10-28 01:13:52,723 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:13:52,723 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-28 01:13:52,723 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-28 01:13:52,725 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-28 01:13:52,726 - INFO - Successful login for user: saascompany@example.com
+2025-10-28 01:13:53,667 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:13:53,667 - DEBUG - Content Length: 75
+2025-10-28 01:13:53,667 - DEBUG - Received POST data: b'{"email":"techstartup@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:13:53,668 - INFO - Parsed login data for email: techstartup@example.com
+2025-10-28 01:13:53,668 - DEBUG - Searching for user with email: techstartup@example.com
+2025-10-28 01:13:53,668 - DEBUG - Verifying password for user: techstartup@example.com
+2025-10-28 01:13:53,669 - INFO - Successful login for user: techstartup@example.com
+2025-10-28 01:15:56,777 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 01:15:56,793 - DEBUG - Content Length: 75
+2025-10-28 01:15:56,793 - DEBUG - Received POST data: b'{"email":"saascompany@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 01:15:56,793 - INFO - Parsed login data for email: saascompany@example.com
+2025-10-28 01:15:56,794 - DEBUG - Searching for user with email: saascompany@example.com
+2025-10-28 01:15:56,795 - DEBUG - Verifying password for user: saascompany@example.com
+2025-10-28 01:15:56,796 - INFO - Successful login for user: saascompany@example.com
+2025-10-28 10:27:59,154 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 10:27:59,192 - DEBUG - Content Length: 73
+2025-10-28 10:27:59,192 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 10:27:59,192 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-28 10:27:59,193 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-28 10:27:59,194 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-28 10:27:59,236 - INFO - Successful login for user: ecommerce@example.com
+2025-10-28 10:28:00,068 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 10:28:00,068 - DEBUG - Content Length: 73
+2025-10-28 10:28:00,068 - DEBUG - Received POST data: b'{"email":"ecommerce@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 10:28:00,068 - INFO - Parsed login data for email: ecommerce@example.com
+2025-10-28 10:28:00,069 - DEBUG - Searching for user with email: ecommerce@example.com
+2025-10-28 10:28:00,069 - DEBUG - Verifying password for user: ecommerce@example.com
+2025-10-28 10:28:00,070 - INFO - Successful login for user: ecommerce@example.com
+2025-10-28 15:33:41,913 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 15:33:42,036 - DEBUG - Content Length: 76
+2025-10-28 15:33:42,036 - DEBUG - Received POST data: b'{"email":"fashionbrand@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 15:33:42,036 - INFO - Parsed login data for email: fashionbrand@example.com
+2025-10-28 15:33:42,039 - DEBUG - Searching for user with email: fashionbrand@example.com
+2025-10-28 15:33:42,178 - DEBUG - Verifying password for user: fashionbrand@example.com
+2025-10-28 15:33:42,327 - INFO - Successful login for user: fashionbrand@example.com
+2025-10-28 15:39:09,486 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 15:39:09,487 - DEBUG - Content Length: 74
+2025-10-28 15:39:09,487 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 15:39:09,487 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-28 15:39:09,487 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-28 15:39:09,488 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-28 15:39:09,489 - INFO - Successful login for user: restaurant@example.com
+2025-10-28 15:39:10,398 - INFO - Login attempt received from IP: 127.0.0.1
+2025-10-28 15:39:10,400 - DEBUG - Content Length: 74
+2025-10-28 15:39:10,400 - DEBUG - Received POST data: b'{"email":"restaurant@example.com","password":"demo123","rememberMe":false}'
+2025-10-28 15:39:10,400 - INFO - Parsed login data for email: restaurant@example.com
+2025-10-28 15:39:10,400 - DEBUG - Searching for user with email: restaurant@example.com
+2025-10-28 15:39:10,401 - DEBUG - Verifying password for user: restaurant@example.com
+2025-10-28 15:39:10,401 - INFO - Successful login for user: restaurant@example.com
